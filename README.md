@@ -1,7 +1,5 @@
 # CNN-Self-Made-Project
 
-# CNN from Scratch vs DenseNet201 on CIFAR-100
-
 This project is a hands-on exploration of convolutional neural networks on the CIFAR-100 dataset. It compares a deep CNN built entirely from scratch with **DenseNet201**, highlighting how architectural choices affect learning, feature propagation, and overall performance.
 
 ---
