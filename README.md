@@ -1,71 +1,68 @@
 # CNN-Self-Made-Project
 
-**Project Overview**
+# CNN from Scratch vs DenseNet201 on CIFAR-100
 
-This project provides a controlled comparison between two convolutional neural network architectures trained on the CIFAR-100 dataset:
+This project is a hands-on exploration of convolutional neural networks on the CIFAR-100 dataset. It compares a deep CNN built entirely from scratch with **DenseNet201**, highlighting how architectural choices affect learning, feature propagation, and overall performance.
 
-PlainCNN50 — a 50-layer convolutional neural network implemented entirely from scratch, without residual or skip connections
+---
 
-DenseNet201 — a modern architecture based on dense skip connections and feature reuse
+## Project Overview
 
-The main objective is to understand, through direct implementation and experimentation, how architectural design choices influence training stability and model performance in deep neural networks.
+I implemented **PlainCNN50**, a 50-layer convolutional network with no residual or skip connections, entirely from scratch. This model follows a purely sequential structure, gradually increasing the number of channels from 32 to 512, with each layer followed by Batch Normalization and ReLU activation.  
 
-**Motivation**
+For comparison, I also trained **DenseNet201**, a modern architecture with dense skip connections that enable feature reuse and improved gradient flow.  
 
-Rather than pursuing state-of-the-art performance, this project focuses on learning by building.
+The goal of this project is to understand — through building and experimentation — how different architectural designs influence training stability, performance, and learning dynamics in deep neural networks.
 
-Implementing a deep CNN from scratch allowed me to explore fundamental challenges in deep learning, such as:
+---
 
-vanishing gradients
+## Motivation
 
-information propagation across deep networks
+This project isn’t about achieving state-of-the-art results. Instead, it’s about **learning by doing**.  
 
-parameter efficiency
+Building a deep CNN from scratch allowed me to explore key challenges in deep learning, including:
 
-the impact of skip connections on optimization
+- Vanishing gradients  
+- How information propagates through very deep networks  
+- Parameter efficiency  
+- The role of skip connections in optimization  
 
-DenseNet201 serves as a strong reference architecture to better understand how modern design principles overcome the limitations of deep sequential models.
+Comparing PlainCNN50 with DenseNet201 provided a clear perspective on how modern design innovations help overcome the limitations of traditional sequential architectures.
 
-**Implementation Details**
+---
 
-**-PlainCNN50:**
+## Implementation Details
 
-50 sequential convolutional layers
+**PlainCNN50**  
+- 50 sequential convolutional layers  
+- No residual or skip connections  
+- Each layer followed by BatchNorm + ReLU  
+- Channels increase from 32 → 512  
 
-No residual or skip connections
+**DenseNet201**  
+- Standard DenseNet201 architecture  
+- Growth rate: *k = 32*  
+- Dense skip connections for feature reuse  
 
-Each layer followed by:
+Both models were trained on CIFAR-100 (50,000 training images, 100 classes) using data augmentation, including random flips and crops.
 
-Batch Normalization
+---
 
-ReLU activation
+## Results & Observations
 
-Channel depth progressively increases from 32 → 512
+DenseNet201 consistently outperforms the plain CNN across all metrics.  
 
-**-DenseNet201:**
+The experiment highlights the impact of architectural innovations:
 
-Standard DenseNet201 architecture
+- Skip connections stabilize training and mitigate vanishing gradients  
+- Feature reuse improves learning efficiency  
+- Deep sequential networks struggle without residual pathways  
 
-Growth rate: k = 32
+This shows that **depth alone isn’t enough** — how layers communicate is crucial for effective training of deep networks.
 
-Dense skip connections enabling feature reuse
+---
 
-
-**Results & Observations**
-
-DenseNet201 consistently outperforms the plain CNN across evaluation metrics.
-
-The observed performance gap highlights how:
-
-skip connections help mitigate vanishing gradients,
-
-feature reuse improves learning efficiency,
-
-deep sequential networks struggle without residual pathways.
-
-This experiment provides a practical demonstration of why modern CNN architectures rely heavily on connectivity patterns rather than simply increasing depth.
-
-**Personal Note**
+## Personal Note
 
 This repository represents my hands-on journey into understanding convolutional neural networks beyond theory.
 
