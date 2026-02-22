@@ -27,7 +27,8 @@ the impact of skip connections on optimization
 DenseNet201 serves as a strong reference architecture to better understand how modern design principles overcome the limitations of deep sequential models.
 
 **Implementation Details**
--PlainCNN50
+
+**-PlainCNN50:**
 
 50 sequential convolutional layers
 
@@ -41,7 +42,7 @@ ReLU activation
 
 Channel depth progressively increases from 32 → 512
 
--DenseNet201
+**-DenseNet201:**
 
 Standard DenseNet201 architecture
 
