@@ -1,13 +1,75 @@
 # CNN-Self-Made-Project
 
-  **ABSTRACT**
+**Project Overview**
 
-This study presents a controlled comparison between two convolutional neural network architectures on the CIFAR-100 dataset: a plain 50-layer CNN implemented from scratch without residual connections, and DenseNet201, which employs dense skip connections and feature reuse. Both models were trained under identical conditions using the Adam optimizer for 50 epochs. Results demonstrate that DenseNet201 significantly outperforms the plain architecture across all metrics. The performance gap is attributed to DenseNet's skip connections, which mitigate vanishing gradients and enable effective feature reuse throughout the network. This experiment quantifies the tangible benefits of modern architectural innovations and highlights the limitations of deep sequential networks without residual pathways.
+This project provides a controlled comparison between two convolutional neural network architectures trained on the CIFAR-100 dataset:
 
-**IMPLEMENTATION**
+PlainCNN50 — a 50-layer convolutional neural network implemented entirely from scratch, without residual or skip connections
 
-PlainCNN50 was implemented from scratch with 50 sequential convolutional layers, each followed by BatchNorm and ReLU, with channels growing from 32 to 512. DenseNet201 was implemented using the standard architecture with growth rate k=32. Both models were trained on CIFAR-100 (50K training images, 100 classes) with data augmentation including random flips and crops.
+DenseNet201 — a modern architecture based on dense skip connections and feature reuse
 
-**PERSONAL NOTE**
+The main objective is to understand, through direct implementation and experimentation, how architectural design choices influence training stability and model performance in deep neural networks.
 
-This project was never intended to break new ground or achieve state-of-the-art results. Its purpose is far simpler and more personal: it represents my hands-on journey into the inner workings of convolutional neural networks. I built PlainCNN50 from scratch not because the world needs another CNN implementation, but because I wanted to truly understand what happens inside these architectures that we so often treat as black boxes.The comparison with DenseNet201 was the perfect counterpoint, allowing me to see firsthand how architectural innovations like skip connections fundamentally change network behavior. This repository is essentially my learning diary, documenting what I discovered about vanishing gradients, feature reuse, parameter efficiency, and the subtle ways that information propagates through deep networks and the primary goal was my own education and curiosity.
+**Motivation**
+
+Rather than pursuing state-of-the-art performance, this project focuses on learning by building.
+
+Implementing a deep CNN from scratch allowed me to explore fundamental challenges in deep learning, such as:
+
+vanishing gradients
+
+information propagation across deep networks
+
+parameter efficiency
+
+the impact of skip connections on optimization
+
+DenseNet201 serves as a strong reference architecture to better understand how modern design principles overcome the limitations of deep sequential models.
+
+**Implementation Details**
+-PlainCNN50
+
+50 sequential convolutional layers
+
+No residual or skip connections
+
+Each layer followed by:
+
+Batch Normalization
+
+ReLU activation
+
+Channel depth progressively increases from 32 → 512
+
+-DenseNet201
+
+Standard DenseNet201 architecture
+
+Growth rate: k = 32
+
+Dense skip connections enabling feature reuse
+
+
+**Results & Observations**
+
+DenseNet201 consistently outperforms the plain CNN across evaluation metrics.
+
+The observed performance gap highlights how:
+
+skip connections help mitigate vanishing gradients,
+
+feature reuse improves learning efficiency,
+
+deep sequential networks struggle without residual pathways.
+
+This experiment provides a practical demonstration of why modern CNN architectures rely heavily on connectivity patterns rather than simply increasing depth.
+
+**Personal Note**
+
+This repository represents my hands-on journey into understanding convolutional neural networks beyond theory.
+
+PlainCNN50 was built from scratch to move away from treating deep learning models as black boxes and instead understand how design decisions affect training dynamics.
+
+The comparison with DenseNet201 allowed me to directly observe how architectural innovations fundamentally change network behavior.
+
+In many ways, this project acts as a learning diary — documenting exploration, experimentation, and curiosity-driven study.
